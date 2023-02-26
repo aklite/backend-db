@@ -16,11 +16,12 @@ const login = async(req, res) => {
     // const isAdmin = adminUser.roles.map(role => role.role).includes('atlasAdmin');
     // user.role = isAdmin ? 'atlasAdmin' : 'user';
           // generate JWT token
+    else {
     const token = jwt.sign({ username: userExists.username}, 'secret', { expiresIn: '1h' });
 
   // return token as response
   res.json({ token });
-
+    }
    
 }
 
